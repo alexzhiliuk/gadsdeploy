@@ -57,7 +57,7 @@ const Campaign: React.FC = () => {
 
     const submitData = async (campaignData: any) => {
         try {
-            const response = await fetch('http://127.0.0.1:5000', {
+            const response = await fetch('http://176.114.89.58/api', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

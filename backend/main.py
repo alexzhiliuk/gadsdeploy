@@ -8,7 +8,7 @@ from campaign import *
 from excel import ExcelGoogleAds
 
 app = Flask(__name__)
-CORS(app, origins="http://localhost:3000", supports_credentials=True)
+CORS(app, origins=["http://localhost:3000", "http://176.114.89.58/"], supports_credentials=True)
 
 
 @app.route('/', methods=["OPTIONS", "GET", "POST"])

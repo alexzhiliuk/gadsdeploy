@@ -1,0 +1,38 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.logo {
+    max-width: 201px;
+    width: 100%;
+    
+    img {
+        width: 100%;
+        display: block;
+    }    
+}
+
+
+h1 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 1.2;
+    color: #000000;
+}
+
+.change-button {
+    margin-top: 20px;
+    background: #EDECEC;
+    border: 3px solid #BEBEBE;
+    border-radius: 10px;
+    font-size: 1em;
+    line-height: 1.2;
+    font-weight: 500;
+    padding: 0.5em 1em;
+}

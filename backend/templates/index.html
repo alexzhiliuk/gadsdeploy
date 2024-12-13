@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>gAdsClickmedia</title>
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20241026162139"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20241026162139"></script>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <header class="header container">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Google Ads">
+        </div>
+        <h1>Генератор объявлений Google AdWords</h1>
+    </header>
+    <main>
+        <form action="" method="post" class="container">
+            <label>
+                Название кампании
+                <input type="text" name="campaign-name" required>
+            </label>
+            <fieldset name="group-1" class="group">
+                <label class="group-name">
+                    Название группы
+                    <input type="text" name="group-1-name" required>
+                </label>
+                <label class="group-keywords">
+                    <span style="display: inline-block; margin-bottom: .5em; font-weight: 500;">Список ключевых слов*</span>
+                    Оформление соответствий:
+                    широкое соответствие - без оборачивания в спецсимволы
+                    "фразовое соответствие" - ключевое слово обернуто в двойные ковычки
+                    [точное соответствие] - ключевое слово обернуто в квадратные скобки
+                    <textarea name="group-1-keywords" required></textarea>
+                </label>
+                <div class="ads">
+                    <fieldset name="group-1-ad-1" class="ad">
+                        <legend class="ad-title">Объявление 1</legend>
+                        <div class="titles">
+                            <div class="title">
+                                Заголовок 1
+                                <div class="input-limit" data-for="group-1-ad-1-title-1"></div>
+                                <div class="title-positions">
+                                    <label  class="title-position">
+                                        -
+                                        <input onclick="checkoxClick(this)" type="checkbox" name="group-1-ad-1-title-postion-1" value="0" checked>
+                                    </label>
+                                    <label  class="title-position">
+                                        1
+                                        <input onclick="checkoxClick(this)" type="checkbox" name="group-1-ad-1-title-postion-1" value="1">
+                                    </label>
+                                    <label  class="title-position">
+                                        2
+                                        <input onclick="checkoxClick(this)" type="checkbox" name="group-1-ad-1-title-postion-1" value="2">
+                                    </label>
+                                    <label  class="title-position">
+                                        3
+                                        <input onclick="checkoxClick(this)" type="checkbox" name="group-1-ad-1-title-postion-1" value="3">
+                                    </label>
+                                </div>
+                                <input type="text" name="group-1-ad-1-title-1" data-limit="15" maxlength="15" oninput="limitInputEvent(this)" class="title-input" required>
+                            </div>
+                            <div class="title">
+                                Заголовок 2
+                                <div class="input-limit" data-for="group-1-ad-1-title-2"></div>
+                                <div class="title-positions">
+                                    <label  class="title-position">
+                                        -
+                                        <input onclick="checkoxClick(this)" type="checkbox" name="group-1-ad-1-title-postion-2" value="0" checked>
+                                    </label>
+                                    <label  class="title-position">
+                                        1
+                                        <input onclick="checkoxClick(this)" type="checkbox" name="group-1-ad-1-title-postion-2" value="1">
+                                    </label>
+                                    <label  class="title-position">
+                                        2
+                                        <input onclick="checkoxClick(this)" type="checkbox" name="group-1-ad-1-title-postion-2" value="2">
+                                    </label>
+                                    <label  class="title-position">
+                                        3
+                                        <input onclick="checkoxClick(this)" type="checkbox" name="group-1-ad-1-title-postion-2" value="3">
+                                    </label>
+                                </div>
+                                <input type="text" name="group-1-ad-1-title-2" data-limit="15" maxlength="15" oninput="limitInputEvent(this)" class="title-input">
+                            </div>
+                            <div class="title">
+                                Заголовок 3
+                                <div class="input-limit" data-for="group-1-ad-1-title-3"></div>
+                                <div class="title-positions">
+                                    <label class="title-position">
+                                        -
+                                        <input onclick="checkoxClick(this)" type="checkbox" name="group-1-ad-1-title-postion-3" value="0" checked>
+                                    </label>
+                                    <label  class="title-position">
+                                        1
+                                        <input onclick="checkoxClick(this)" type="checkbox" name="group-1-ad-1-title-postion-3" value="1">
+                                    </label>
+                                    <label class="title-position">
+                                        2
+                                        <input onclick="checkoxClick(this)" type="checkbox" name="group-1-ad-1-title-postion-3" value="2">
+                                    </label>
+                                    <label class="title-position">
+                                        3
+                                        <input onclick="checkoxClick(this)" type="checkbox" name="group-1-ad-1-title-postion-3" value="3">
+                                    </label>
+                                </div>
+                                <input type="text" name="group-1-ad-1-title-3" data-limit="15" maxlength="15" oninput="limitInputEvent(this)" class="title-input">
+                            </div>
+                        </div>
+                        <button type="button" class="add-title" onclick="addTitle(this)">+ Заголовок</button>
+                        <div class="descs">
+                            <div class="desc">
+                                Описание 1
+                                <div class="input-limit" data-for="group-1-ad-1-desc-1"></div>
+                                <div class="desc-positions">
+                                    <label class="desc-position">
+                                        -
+                                        <input onclick="checkoxClick(this)" type="checkbox" name="group-1-ad-1-desc-postion-1" value="0" checked>
+                                    </label>
+                                    <label class="desc-position">
+                                        1
+                                        <input onclick="checkoxClick(this)" type="checkbox" name="group-1-ad-1-desc-postion-1" value="1">
+                                    </label>
+                                    <label class="desc-position">
+                                        2
+                                        <input onclick="checkoxClick(this)" type="checkbox" name="group-1-ad-1-desc-postion-1" value="2">
+                                    </label>
+                                </div>
+                                <input type="text" name="group-1-ad-1-desc-1" data-limit="90" maxlength="90" oninput="limitInputEvent(this)" class="desc-input" required>
+                            </div>
+                            <div class="desc">
+                                Описание 2
+                                <div class="input-limit" data-for="group-1-ad-1-desc-2"></div>
+                                <div class="desc-positions">
+                                    <label class="desc-position">
+                                        -
+                                        <input onclick="checkoxClick(this)" type="checkbox" name="group-1-ad-1-desc-postion-2" value="0" checked>
+                                    </label>
+                                    <label class="desc-position">
+                                        1
+                                        <input onclick="checkoxClick(this)" type="checkbox" name="group-1-ad-1-desc-postion-2" value="1">
+                                    </label>
+                                    <label class="desc-position">
+                                        2
+                                        <input onclick="checkoxClick(this)" type="checkbox" name="group-1-ad-1-desc-postion-2" value="2">
+                                    </label>
+                                </div>
+                                <input type="text" name="group-1-ad-1-desc-2" data-limit="90" maxlength="90" oninput="limitInputEvent(this)" class="desc-input">
+                            </div>
+                        </div>
+                        <button type="button" class="add-desc" onclick="addDesc(this)">+ Описание</button>
+                        <div class="url-params">
+                            <label style="flex-grow: 1;">
+                                Конечный URL
+                                <input type="text" name="group-1-ad-1-end-url" class="end-url" required>
+                            </label>
+                            <label>
+                                Путь
+                                <div class="url-params__row">
+                                    <input type="text" name="group-1-ad-1-path-1" data-limit="15" maxlength="15" oninput="limitInputEvent(this)" class="path-1" required>
+                                    <div class="input-limit" data-for="group-1-ad-1-path-1"></div>
+                                    /
+                                    <input type="text" name="group-1-ad-1-path-2" data-limit="15" maxlength="15" oninput="limitInputEvent(this)" class="path-2" required>
+                                    <div class="input-limit" data-for="group-1-ad-1-path-2"></div>
+                                </div>
+                            </label>
+                        </div>
+                        <label>
+                            Шаблон отслеживания
+                            <input type="text" name="group-1-ad-1-tracking" class="tracking" required>
+                        </label>
+                        <div class="ad-btns">
+                            <button type="button" class="duplicate-ad" onclick="duplicateEvent(this)">Дублировать</button>
+                            <button type="button" class="clear-ad" onClick="clearAd(this)">Очистить</button>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <button type="button" class="add-ad" onclick="createNewAd(this)">Создать новое объявление</button>
+            </fieldset>
+            <div class="bottom-btns">
+                <button type="button" id="addGroup">Новая группа</button>
+                <button type="submit" class="generate-btn">СГЕНЕРИРОВАТЬ XLSX</button>
+            </div>
+        </form>
+
+
+    </main>
+
+    <script>
+        $("input[type='text']").val("asd")
+        $("textarea").val("asd")
+
+        function updateLimits() {
+            $("[data-limit]").each(function(i, el) {
+                let forName = $(el).attr("name"),
+                    limitEl = $(`[data-for=${forName}]`)
+    
+                limitEl.html($(el).val().length)
+            })
+        }
+        updateLimits()
+        function limitInputEvent(el) {
+            let forName = $(el).attr("name"),
+                limitEl = $(`[data-for=${forName}]`),
+                limit = Number($(el).data("limit")),
+                length = $(el).val().length
+
+            if (length >= limit) { limitEl.css("color", "red") }
+            else { limitEl.css("color", "") }
+            limitEl.html($(el).val().length)
+        }
+        
+        function checkoxClick(el) {
+            $(el).parents(".title-positions, .desc-positions").find("input[type='checkbox']").each(function(i, input) {
+                input.checked = false
+            })
+            el.checked = true
+
+            $(el).parents(".title-positions, .desc-positions").find(".title-position, .desc-position").removeClass("active")
+            $(el).parent().addClass("active")
+        }
+        $("input[type='checkbox']:checked").parents(".title-position, .desc-position").addClass("active")
+
+        $("form").on("submit", function(e) {
+            e.preventDefault()
+            campaign = {
+                name: $("[name=campaign-name]").val(),
+                groups: []
+            }
+
+            $(".group").each(function(group_index, group) {
+                let group_object = {}
+                group_object.name = $(group).find(".group-name input").val()
+                group_object.keywords = $(group).find(".group-keywords textarea").val()
+                group_object.ads = []
+
+                $(group).find(".ad").each(function(ad_index, ad) {
+                    let ad_object = {}
+                    ad_object.titles = []
+                    ad_object.descs = []
+
+                    $(ad).find(".title").each(function (title_index, title) {
+                        let title_object = {},
+                            titleInput = $(title).find(".title-input"),
+                            titlePositions = $(title).find(".title-positions")
+
+                        if (titleInput.val()) {
+                            title_object.title = titleInput.val()
+                            title_object.position = titlePositions.find("input:checked").val()
+                            ad_object.titles.push(title_object)
+                        }
+                    })
+                    $(ad).find(".desc").each(function (desc_index, desc) {
+                        let descObject = {},
+                            descInput = $(desc).find(".desc-input"),
+                            descPositions = $(desc).find(".desc-positions")
+
+                        if (descInput.val()) {
+                            descObject.desc = descInput.val()
+                            descObject.position = descPositions.find("input:checked").val()
+                            ad_object.descs.push(descObject)
+                        }
+                    })
+
+                    ad_object.end_url = $(ad).find(".end-url").val()
+                    ad_object.path1 = $(ad).find(".path-1").val()
+                    ad_object.path2 = $(ad).find(".path-2").val()
+                    ad_object.tracking = $(ad).find(".tracking").val()
+
+                    group_object.ads.push(ad_object)
+                })
+
+                campaign.groups.push(group_object)
+            })
+
+            $.ajax({
+                url: '/',
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(campaign),
+                xhrFields: {
+                    responseType: 'blob' // Указываем, что ожидаем бинарный ответ
+                },
+                success: (blob, status, xhr) => {
+                    // Достаем имя файла из заголовков, если нужно
+                    const disposition = xhr.getResponseHeader('Content-Disposition');
+                    let filename = "campaign.xlsx";
+                    if (disposition && disposition.indexOf('attachment') !== -1) {
+                        const matches = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/.exec(disposition);
+                        if (matches != null && matches[1]) { 
+                            filename = matches[1].replace(/['"]/g, '');
+                        }
+                    }
+
+                    // Создаем URL из Blob и инициируем скачивание
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    window.URL.revokeObjectURL(url); // Освобождаем URL
+                },
+                error: (xhr, status, error) => {
+                    alert("Произошла ошибка" + error);
+                }
+            })
+            this.reset()
+            
+        })
+
+        function addTitle(el) {
+
+            let titles = $(el).parents("fieldset").first().find(".titles"),
+                lastTitle = titles.find(".title-input").last(),
+                regex = /\d+$/,
+                newTitleId = Number(regex.exec(lastTitle.attr("name"))) + 1,
+                newTitle = $(`
+                <div class="title">
+                    Заголовок ${newTitleId}
+                    <div class="input-limit" data-for="${lastTitle.attr('name').replace(regex, newTitleId)}"></div>
+                    <div class="title-positions">
+                        <label  class="title-position active">
+                            -
+                            <input onclick="checkoxClick(this)" type="checkbox" name="${lastTitle.attr('name').replace(regex, 'postition-' + newTitleId)}" value="0" checked>
+                        </label>
+                        <label  class="title-position">
+                            1
+                            <input onclick="checkoxClick(this)" type="checkbox" name="${lastTitle.attr('name').replace(regex, 'postition-' + newTitleId)}" value="1">
+                        </label>
+                        <label  class="title-position">
+                            2
+                            <input onclick="checkoxClick(this)" type="checkbox" name="${lastTitle.attr('name').replace(regex, 'postition-' + newTitleId)}" value="2">
+                        </label>
+                        <label  class="title-position">
+                            3
+                            <input onclick="checkoxClick(this)" type="checkbox" name="${lastTitle.attr('name').replace(regex, 'postition-' + newTitleId)}" value="3">
+                        </label>
+                    </div>
+                    <input type="text" name="${lastTitle.attr('name').replace(regex, newTitleId)}" data-limit="15" maxlength="15" oninput="limitInputEvent(this)" class="title-input" required>
+                </div>
+                `)
+
+            titles.append(newTitle)
+            updateLimits()
+        }
+
+        function addDesc(el) {
+
+            let descs = $(el).parents("fieldset").first().find(".descs"),
+                lastDesc = descs.find("input").last(),
+                regex = /\d+$/,
+                newDescId = Number(regex.exec(lastDesc.attr("name"))) + 1,
+                newDesc = $(`
+                <div class="desc">
+                    Описание ${newDescId}
+                    <div class="input-limit" data-for="${lastDesc.attr('name').replace(regex, newDescId)}"></div>
+                    <div class="desc-positions">
+                        <label class="desc-position active">
+                            -
+                            <input onclick="checkoxClick(this)" type="checkbox" name="${lastDesc.attr('name').replace(regex, 'position-' + newDescId)}" value="0" checked>
+                        </label>
+                        <label class="desc-position">
+                            1
+                            <input onclick="checkoxClick(this)" type="checkbox" name="${lastDesc.attr('name').replace(regex, 'position-' + newDescId)} value="1">
+                        </label>
+                        <label class="desc-position">
+                            2
+                            <input onclick="checkoxClick(this)" type="checkbox" name="${lastDesc.attr('name').replace(regex, 'position-' + newDescId)} value="2">
+                        </label>
+                    </div>
+                    <input type="text" name="${lastDesc.attr('name').replace(regex, newDescId)}" data-limit="90" maxlength="90" oninput="limitInputEvent(this)" class="desc-input" required>
+                </div>
+                `)
+            descs.append(newDesc)
+            updateLimits()
+        }
+
+        function updateInputsName(ad, newAdId) {
+            ad.find("input").each(function(i, el) {
+                $(el).attr("name", $(el).attr("name").replace(/ad-\d+/, `ad-${newAdId}`))
+            })
+        }
+
+
+        function createNewAd(el, duplicate=false, duplicateName=null) {
+            let ad, newAd;
+            if (duplicate) {
+                ad = $(el).parents(".group").find(".ads .ad[name=" + duplicateName + "]").first()
+                newAd = ad.clone()
+            } else {
+                ad = $(el).parents(".group").find(".ads .ad").first()
+                newAd = ad.clone()
+
+                newAd.find(".title").slice(3).remove()
+                newAd.find(".desc").slice(2).remove()
+            }
+            let lastAd = ad.parents(".ads").children(".ad").last(),
+                regex = /\d+$/,
+                newAdId = Number(regex.exec(lastAd.attr("name"))) + 1
+
+            newAd.find(".ad-title").html(`Объявление ${newAdId}`)
+            newAd.attr("name", newAd.attr("name").replace(regex, newAdId))
+            if (!duplicate) {
+                newAd.find("input[type=text]").val("")
+                newAd.find("input[type=checkbox]").prop("checked", false)
+                newAd.find("input[type=checkbox][value=0]").prop("checked", true)
+            }
+
+            $(el).parents(".group").find(".ads").append(newAd)
+
+            updateInputsName(newAd, newAdId)
+        }
+
+        function duplicateEvent(el) {
+            createNewAd(el, true, $(el).parents(".ad").attr("name"))
+        }
+
+        function clearAd(el) {
+            let ad = $(el).parents("fieldset").first()
+            ad.find("input:not([type='checkbox'])").val("")
+            ad.find("input[type=checkbox]").prop("checked", false)
+            ad.find("input[type=checkbox][value=0]").prop("checked", true)
+            updateLimits()
+        }
+
+        $("#addGroup").click(function() {
+            let lastGroup = $(".group").last(),
+                regex = /\d+$/,
+                newGroupId = Number(regex.exec(lastGroup.attr("name"))) + 1
+
+            $(`
+                <fieldset name="group-${newGroupId}" class="group">
+                    <label class="group-name">
+                        Название группы
+                        <input type="text" name="group-${newGroupId}-name" required>
+                    </label>
+                    <label class="group-keywords">
+                        <span style="display: inline-block; margin-bottom: .5em; font-weight: 500;">Список ключевых слов*</span>
+                        Оформление соответствий:
+                        широкое соответствие - без оборачивания в спецсимволы
+                        "фразовое соответствие" - ключевое слово обернуто в двойные ковычки
+                        [точное соответствие] - ключевое слово обернуто в квадратные скобки
+                        <textarea name="group-${newGroupId}-keywords" required></textarea>
+                    </label>
+                    <div class="ads">
+                        <fieldset name="group-${newGroupId}-ad-1" class="ad">
+                            <legend class="ad-title">Объявление 1</legend>
+                            <div class="titles">
+                                <div class="title">
+                                    Заголовок 1
+                                    <div class="input-limit" data-for="group-${newGroupId}-ad-1-title-1"></div>
+                                    <div class="title-positions">
+                                        <label  class="title-position">
+                                            -
+                                            <input onclick="checkoxClick(this)" type="checkbox" name="group-${newGroupId}-ad-1-title-postion-1" value="0" checked>
+                                        </label>
+                                        <label  class="title-position">
+                                            1
+                                            <input onclick="checkoxClick(this)" type="checkbox" name="group-${newGroupId}-ad-1-title-postion-1" value="1">
+                                        </label>
+                                        <label  class="title-position">
+                                            2
+                                            <input onclick="checkoxClick(this)" type="checkbox" name="group-${newGroupId}-ad-1-title-postion-1" value="2">
+                                        </label>
+                                        <label  class="title-position">
+                                            3
+                                            <input onclick="checkoxClick(this)" type="checkbox" name="group-${newGroupId}-ad-1-title-postion-1" value="3">
+                                        </label>
+                                    </div>
+                                    <input type="text" name="group-${newGroupId}-ad-1-title-1" data-limit="15" maxlength="15" oninput="limitInputEvent(this)" class="title-input" required>
+                                </div>
+                                <div class="title">
+                                    Заголовок 2
+                                    <div class="input-limit" data-for="group-${newGroupId}-ad-1-title-2"></div>
+                                    <div class="title-positions">
+                                        <label  class="title-position">
+                                            -
+                                            <input onclick="checkoxClick(this)" type="checkbox" name="group-${newGroupId}-ad-1-title-postion-2" value="0" checked>
+                                        </label>
+                                        <label  class="title-position">
+                                            1
+                                            <input onclick="checkoxClick(this)" type="checkbox" name="group-${newGroupId}-ad-1-title-postion-2" value="1">
+                                        </label>
+                                        <label  class="title-position">
+                                            2
+                                            <input onclick="checkoxClick(this)" type="checkbox" name="group-${newGroupId}-ad-1-title-postion-2" value="2">
+                                        </label>
+                                        <label  class="title-position">
+                                            3
+                                            <input onclick="checkoxClick(this)" type="checkbox" name="group-${newGroupId}-ad-1-title-postion-2" value="3">
+                                        </label>
+                                    </div>
+                                    <input type="text" name="group-${newGroupId}-ad-1-title-2" data-limit="15" maxlength="15" oninput="limitInputEvent(this)" class="title-input">
+                                </div>
+                                <div class="title">
+                                    Заголовок 3
+                                    <div class="input-limit" data-for="group-${newGroupId}-ad-1-title-3"></div>
+                                    <div class="title-positions">
+                                        <label class="title-position">
+                                            -
+                                            <input onclick="checkoxClick(this)" type="checkbox" name="group-${newGroupId}-ad-1-title-postion-3" value="0" checked>
+                                        </label>
+                                        <label  class="title-position">
+                                            1
+                                            <input onclick="checkoxClick(this)" type="checkbox" name="group-${newGroupId}-ad-1-title-postion-3" value="1">
+                                        </label>
+                                        <label class="title-position">
+                                            2
+                                            <input onclick="checkoxClick(this)" type="checkbox" name="group-${newGroupId}-ad-1-title-postion-3" value="2">
+                                        </label>
+                                        <label class="title-position">
+                                            3
+                                            <input onclick="checkoxClick(this)" type="checkbox" name="group-${newGroupId}-ad-1-title-postion-3" value="3">
+                                        </label>
+                                    </div>
+                                    <input type="text" name="group-${newGroupId}-ad-1-title-3" data-limit="15" maxlength="15" oninput="limitInputEvent(this)" class="title-input">
+                                </div>
+                            </div>
+                            <button type="button" class="add-title" onclick="addTitle(this)">+ Заголовок</button>
+                            <div class="descs">
+                                <div class="desc">
+                                    Описание 1
+                                    <div class="input-limit" data-for="group-${newGroupId}-ad-1-desc-1"></div>
+                                    <div class="desc-positions">
+                                        <label class="desc-position">
+                                            -
+                                            <input onclick="checkoxClick(this)" type="checkbox" name="group-${newGroupId}-ad-1-desc-postion-1" value="0" checked>
+                                        </label>
+                                        <label class="desc-position">
+                                            1
+                                            <input onclick="checkoxClick(this)" type="checkbox" name="group-${newGroupId}-ad-1-desc-postion-1" value="1">
+                                        </label>
+                                        <label class="desc-position">
+                                            2
+                                            <input onclick="checkoxClick(this)" type="checkbox" name="group-${newGroupId}-ad-1-desc-postion-1" value="2">
+                                        </label>
+                                    </div>
+                                    <input type="text" name="group-${newGroupId}-ad-1-desc-1" data-limit="90" maxlength="90" oninput="limitInputEvent(this)" class="desc-input" required>
+                                </div>
+                                <div class="desc">
+                                    Описание 2
+                                    <div class="input-limit" data-for="group-${newGroupId}-ad-1-desc-2"></div>
+                                    <div class="desc-positions">
+                                        <label class="desc-position">
+                                            -
+                                            <input onclick="checkoxClick(this)" type="checkbox" name="group-${newGroupId}-ad-1-desc-postion-2" value="0" checked>
+                                        </label>
+                                        <label class="desc-position">
+                                            1
+                                            <input onclick="checkoxClick(this)" type="checkbox" name="group-${newGroupId}-ad-1-desc-postion-2" value="1">
+                                        </label>
+                                        <label class="desc-position">
+                                            2
+                                            <input onclick="checkoxClick(this)" type="checkbox" name="group-${newGroupId}-ad-1-desc-postion-2" value="2">
+                                        </label>
+                                    </div>
+                                    <input type="text" name="group-${newGroupId}-ad-1-desc-2" data-limit="90" maxlength="90" oninput="limitInputEvent(this)" class="desc-input">
+                                </div>
+                            </div>
+                            <button type="button" class="add-desc" onclick="addDesc(this)">+ Описание</button>
+                            <div class="url-params">
+                                <label style="flex-grow: 1;">
+                                    Конечный URL
+                                    <input type="text" name="group-${newGroupId}-ad-1-end-url" class="end-url" required>
+                                </label>
+                                <label>
+                                    Путь
+                                    <div class="url-params__row">
+                                        <input type="text" name="group-${newGroupId}-ad-1-path-1" data-limit="15" maxlength="15" oninput="limitInputEvent(this)" class="path-1" required>
+                                        <div class="input-limit" data-for="group-${newGroupId}-ad-1-path-1"></div>
+                                        /
+                                        <input type="text" name="group-${newGroupId}-ad-1-path-2" data-limit="15" maxlength="15" oninput="limitInputEvent(this)" class="path-2" required>
+                                        <div class="input-limit" data-for="group-${newGroupId}-ad-1-path-2"></div>
+                                    </div>
+                                </label>
+                            </div>
+                            <label>
+                                Шаблон отслеживания
+                                <input type="text" name="group-${newGroupId}-ad-1-tracking" class="tracking" required>
+                            </label>
+                            <div class="ad-btns">
+                                <button type="button" class="duplicate-ad" onclick="duplicateEvent(this)">Дублировать</button>
+                                <button type="button" class="clear-ad" onClick="clearAd(this)">Очистить</button>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <button type="button" class="add-ad" onclick="createNewAd(this)">Создать новое объявление</button>
+                </fieldset>
+            `).insertAfter(lastGroup)
+
+            updateLimits()
+            $("input[type='checkbox']:checked").parents(".title-position, .desc-position").addClass("active")
+        })
+    </script>
+</body>
+</html>

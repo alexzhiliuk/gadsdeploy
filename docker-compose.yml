@@ -8,6 +8,7 @@ services:
       - "80:80"
     volumes:
       - './nginx.conf:/etc/nginx/nginx.conf'
+      - '/etc/nginx/certs:/etc/nginx/certs'
     depends_on:
       - backend
       - frontend

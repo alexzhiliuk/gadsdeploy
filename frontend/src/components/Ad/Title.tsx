@@ -88,7 +88,7 @@ function Title({ groupIndex, adIndex, index }: ITitleProps) {
             </div>
             <input type="text" name={`group-${groupIndex}-ad-${adIndex}-title-${index}`} maxLength={maxLength}  className="title-input" value={title.title} onChange={(e: ChangeEvent<HTMLInputElement>) => {updateTitleField("title", e.target.value)}} 
                 required={(index > 2 && campaign.type === "Google") || (index > 0 && campaign.type === "Yandex")  ? false : true} />
-            <button style={{display: index < 3 || campaign.type === "Google" ? "none" : ""}} onClick={removeTitle}>Удалить</button>
+            <button style={{display: index < 3 ? "none" : ""}} onClick={removeTitle}>Удалить</button>
         </div>
     );
   }

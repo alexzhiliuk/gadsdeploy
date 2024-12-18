@@ -54,6 +54,11 @@ function YandexAd({ groupIndex, index }: IAdProps) {
         }));
     };
 
+    const updatePath = (e: ChangeEvent<HTMLInputElement>) => {
+        let value = e.target.value.replace(/\s+/g, "")
+        updateAdField(value, "path1")
+    }
+
     const addNewTitle = () => {
         setCampaign((prev) => ({
             ...prev,
@@ -184,7 +189,7 @@ function YandexAd({ groupIndex, index }: IAdProps) {
             </div>
             <button type="button" className="add-desc" onClick={addNewDescription} style={{display: ad.descriptions.length > 3 || campaign.type === "Yandex" ? "none": ""}}>+ Описание</button>
 
-            {/* <div className="url-params"> */}
+            <div className="url-params">
                 <label style={{flexGrow: "1"}}>
                     <div style={{display: "flex", gap: "20px", alignItems: "center", marginBottom: "10px"}}>
                         Конечный URL
@@ -201,7 +206,14 @@ function YandexAd({ groupIndex, index }: IAdProps) {
                         onChange={(e: ChangeEvent<HTMLInputElement>) => {updateAdField(e.target.value, "endUrl")}}
                     />
                 </label>
-            {/* </div> */}
+                <label>
+                    Отображаемая ссылка
+                    <div className="url-params__row" style={{marginTop: "10px"}}>
+                        <input type="text" name={`group-${groupIndex}-ad-${index}-path-1`} maxLength={20} className="path-1" required value={ad.path1} onChange={updatePath} />
+                        <div className="input-limit" style={{color: ad.path1.length >= 20 ? "red": ""}}>{ad.path1.length}</div>
+                    </div>
+                </label>
+            </div>
             <a href={ad.endUrl} style={{"display": ad.endUrl ? "" : "none"}} target='_blank'>Предпросмотр</a>
             
             <div className="ad-btns">

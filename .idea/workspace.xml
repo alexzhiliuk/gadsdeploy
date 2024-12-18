@@ -5,66 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7afa8c9-563a-41e1-b2f0-c75b3959496f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gAdsClickmedia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gAdsClickmedia.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/excel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/excel_templates/result.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/backend/excel_templates/result.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/excel_templates/yandex_template.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/backend/excel_templates/yandex_template.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/build/asset-manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/build/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/build/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/build/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/build/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/build/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/build/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/build/static/css/main.eed335b2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/build/static/css/main.eed335b2.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/build/static/js/453.d2e4350c.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/build/static/js/453.d2e4350c.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/build/static/js/main.6b3daaec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/build/static/js/main.6b3daaec.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/build/static/js/main.6b3daaec.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/build/static/media/logo.3498ad1ac3d53650eafa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/nginx.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/App.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/assets/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/Ad/Ad.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/Ad/Description.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/Ad/Title.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/Ad/YandexAd.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/Ad/YandexDescription.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/Ad/YandexTitle.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/Campaign/Campaign.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/Campaign/campaign.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/Group/Group.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/Inputs/Input.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/http-common.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/react-app-env.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/reportWebVitals.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/services/TutorialService.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/setupTests.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/store/context.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/styles/global.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/styles/reset.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/types/Tutorial.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/tailwind.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Ad/Title.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Ad/Title.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Ad/YandexAd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Ad/YandexAd.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Campaign/Campaign.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Campaign/Campaign.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/global.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +34,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/front" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -98,7 +52,8 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "d7824170",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "188bfbff",
     "last_opened_file_path": "/Users/alex/Documents/cases/python/gAdsClickmedia",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }

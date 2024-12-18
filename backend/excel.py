@@ -117,6 +117,7 @@ class ExcelGoogleAds:
                     col_index += 1
 
                 self.ws2.cell(row_index, col_index, str(ad.end_url))
+                self.ws2.cell(row_index, col_index+1, str(ad.paths[0]))
 
                 row_index += 1
 

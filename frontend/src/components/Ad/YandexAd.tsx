@@ -193,7 +193,6 @@ function YandexAd({ groupIndex, index }: IAdProps) {
                 <label style={{flexGrow: "1"}}>
                     <div style={{display: "flex", gap: "20px", alignItems: "center", marginBottom: "10px"}}>
                         Конечный URL
-                        <div className="input-limit" style={{color: ad.endUrl.length >= maxLengthEndUrl ? "red": ""}}>{ad.endUrl.length}</div>
                     </div>
                     <input 
                         title="Это поле обязательно для заполнения"
@@ -202,7 +201,6 @@ function YandexAd({ groupIndex, index }: IAdProps) {
                         name={`group-${groupIndex}-ad-${index}-end-url`} 
                         required={true} 
                         className="end-url"
-                        maxLength={maxLengthEndUrl}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => {updateAdField(e.target.value, "endUrl")}}
                     />
                 </label>

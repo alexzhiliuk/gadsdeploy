@@ -209,7 +209,7 @@ function YandexAd({ groupIndex, index }: IAdProps) {
                 <label>
                     Отображаемая ссылка
                     <div className="url-params__row" style={{marginTop: "10px"}}>
-                        <input type="text" name={`group-${groupIndex}-ad-${index}-path-1`} maxLength={20} className="path-1" required value={ad.path1} onChange={updatePath} />
+                        <input type="text" name={`group-${groupIndex}-ad-${index}-path-1`} maxLength={20} className="path-1" value={ad.path1} onChange={updatePath} />
                         <div className="input-limit" style={{color: ad.path1.length >= 20 ? "red": ""}}>{ad.path1.length}</div>
                     </div>
                 </label>
